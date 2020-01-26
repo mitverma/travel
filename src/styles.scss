@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+// @font-face {
+//     font-family: 'Open Sans', sans-serif;
+//     src:
+//     url('assets/fonts/OpenSans-Regular.ttf');
+//         // url('assets/fonts/Open_Sans/OpenSans-BoldItalic.ttf'), 
+//         //  url('assets/fonts/Open_Sans/OpenSans-Bold.ttf'),
+//         //  url('assets/fonts/Open_Sans/OpenSans-ExtraBold.ttf'),
+//         //  url('assets/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf'),
+//         //  url('assets/fonts/Open_Sans/OpenSans-Light.ttf'),
+//         //  url('assets/fonts/Open_Sans/OpenSans-Regular.ttf');
+//         //  url('assets/fonts/Open_Sans/OpenSans-SemiBold.ttf');
+//   }
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('assets/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+// @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    padding-bottom: 10px;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
