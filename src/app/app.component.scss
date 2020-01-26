@@ -149,6 +149,12 @@ section {
                 box-shadow: 0px 4px 7px #ccc;
                 transition:  all 200ms linear;
             }
+            .pacakge-img-holder {
+                height: 235px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: 50% 50%;
+            }
         }
         .package-info {
             background-color: #fff;
@@ -212,12 +218,34 @@ section {
         .masonry-layout {
             column-count: 3;
             .img-holder {
-                padding: 5px;
+                // padding: 5px;
+                margin-bottom: 15px;
                 display: flex;
                 flex-wrap: wrap;
+                position: relative;
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    right: 0;
+                    bottom: 0;
+                    transform: translate(-50%, -50%);
+                    background-color: transparent;
+                    transition: all 150ms linear;
+                }
+                &:hover {
+                    transition: all 150ms linear;
+                    &:after {
+                        background-color: rgba(0,0,0,.5);
+                    }
+                }
                 img {
                     width: 100%;
                     height: auto;
+                    border-radius: 4px;
                 }
             }
         }
@@ -280,6 +308,7 @@ section {
                         margin-left: 25px;
                         display: inline-block;
                         letter-spacing: 2px;
+                        vertical-align: top;
                     }
                 }
             }

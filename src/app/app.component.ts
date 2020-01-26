@@ -86,19 +86,20 @@ export class AppComponent {
       },
     ];
     this.galleryList = [
-      'assets/imgs/g1.jpeg',
-      'assets/imgs/g2.jpeg',
-      'assets/imgs/g3.jpeg',
-      'assets/imgs/g4.jpeg',
-      'assets/imgs/g5.jpeg',
-      'assets/imgs/g6.jpeg',
-      'assets/imgs/g7.jpeg',
-      'assets/imgs/g8.jpeg',
-      'assets/imgs/g9.jpeg',
-      'assets/imgs/slide1.jpg',
-      'assets/imgs/slide2.jpg',
-      'assets/imgs/slide3.jpg',
-      'assets/imgs/slide4.jpg',
+      'assets/imgs/gallery/g1.jpeg',
+      'assets/imgs/gallery/g2.jpg',
+      'assets/imgs/gallery/g3.jpg',
+      'assets/imgs/gallery/g9.jpeg',
+      'assets/imgs/gallery/g4.jpg',
+      // 'assets/imgs/gallery/g6.jpg',
+      'assets/imgs/gallery/g7.jpg',
+      'assets/imgs/gallery/g8.jpg',
+      'assets/imgs/gallery/g5.jpg',
+      'assets/imgs/gallery/g10.jpg',
+      // 'assets/imgs/gallery/slide1.jpg',
+      // 'assets/imgs/gallery/slide2.jpg',
+      // 'assets/imgs/gallery/slide3.jpg',
+      // 'assets/imgs/gallery/slide4.jpg',
     ];
 
     this.testimonalList = [

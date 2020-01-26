@@ -25,7 +25,7 @@
         </div>
         <div class="mouse-scroll">
           <div class="mouse">
-            <div class="icon-animate"></div>
+            <div class="icon-animate" (click)="scroll(tours, $event)"></div>
           </div>
         </div>
       </div>
@@ -39,8 +39,8 @@
       <div class="package-list-holder row">
         <div class="col-md-4" *ngFor="let package of packageList;">
           <div class="package-holder">
-              <div class="pacakge-img-holder">
-                  <img src="{{package.imgSrc}}" alt="{{package.imgName}}" class="img-fluid">
+              <div class="pacakge-img-holder" [ngStyle]="{'background-image': 'url('+package.imgSrc+')'}">
+                  <!-- <img src="{{package.imgSrc}}" alt="{{package.imgName}}" class="img-fluid"> -->
                 </div>
                 <div class="package-info">
                   <h4 class="tour-name">{{package.tourName}}</h4>
@@ -126,7 +126,7 @@
               <input type="email" class="form-control" placeholder="Enter your email">
             </div>
           </div>
-          <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>  
+          <textarea class="form-control" name="" id="" placeholder="Enter your reviews ..." cols="30" rows="10"></textarea>  
           <div>
             <button class="btn btn-orange">Submit</button>
           </div>
@@ -146,7 +146,7 @@
             </li>
             <li>
               <img src="assets/imgs/pin.svg" alt="" height="30px" class="img-icon">
-              <span class="info">U cannot find Me, Its very complicate</span>
+              <span class="info">DDA flat, no 8, New Ranjeet Nagar, <br> New Delhi, Delhi</span>
             </li>
           </ul>
         </div>
