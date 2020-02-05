@@ -1,6 +1,9 @@
 <header>
   <nav>
-    <ul>
+    <div class="hamburger" (click)="openMenu();" [ngClass]="showMenu ? 'view-menu': ''">
+      <span></span>
+    </div>
+    <ul *ngIf="showMenu">
       <li><a class="menu-heading menu-home active" (click)="scroll(banner, $event)">Home</a></li>
       <li><a class="menu-heading menu-tour" (click)="scroll(tours, $event)">Tours</a></li>
       <li><a class="menu-heading menu-gallery" (click)="scroll(gallery, $event)">Gallery</a></li>
@@ -160,6 +163,27 @@
       </div>
     </div>
   </div>
+</section>
+<section class="demo">
+<div class="overflow">
+  <span class="float-left">Vertical alignment 1</span>
+  <span class="float-right">Vertical alignment 2</span>
+</div>
+<p>Lorem ipsum dummmy text to display float example</p>
+<div class="dib-demo">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+</div>
+<div class="float-demo">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+</div>
 </section>
 
 <router-outlet></router-outlet>

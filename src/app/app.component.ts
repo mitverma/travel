@@ -12,6 +12,7 @@ export class AppComponent {
   serviceList: any = [];
   galleryList: any = [];
   testimonalList: any = [];
+  showMenu: boolean = true;
 
   constructor(){
     this.bannerList = [
@@ -139,7 +140,6 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    
   }
 
   scroll(el: HTMLElement, event: any){
@@ -185,4 +185,12 @@ export class AppComponent {
     }
 
   }
+
+
+  openMenu(){
+    this.showMenu = !this.showMenu;
+  }
+
+
+  
 }
