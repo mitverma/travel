@@ -1,4 +1,4 @@
-<!-- <header>
+<header>
   <nav>
     <div class="hamburger" (click)="openMenu();" [ngClass]="showMenu ? 'view-menu': ''">
       <span></span>
@@ -9,7 +9,7 @@
       <li><a class="menu-heading menu-gallery" (click)="scroll(gallery, $event)">Gallery</a></li>
       <li><a class="menu-heading menu-service" (click)="scroll(service, $event)">Services</a></li>
       <li><a class="menu-heading menu-testimonal" (click)="scroll(testimonal, $event)">Testimonals</a></li>
-      <li><a class="menu-heading menu-testimonal" (click)="scroll(about, $event)">About Us</a></li>
+      <li><a class="menu-heading menu-about" (click)="scroll(about, $event)">About Us</a></li>
       <li><a class="menu-heading menu-contact" (click)="scroll(contact, $event)">Contact</a></li>
     </ul>
   </nav>
@@ -19,6 +19,8 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel"  data-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item" *ngFor="let list of bannerList; let i = index;" [ngClass]="{'active' : i == 0 }" [ngStyle]="{'background-image': 'url('+list.imgSrc+')'}">
+          <!-- <img class="d-block w-100" src="{{list.imgSrc}}" alt="{{list.imgName}}"> -->
+          <!-- <img class="img-fluid" src="{{list.imgSrc}}" alt="{{list.imgName}}"> -->
         </div>
         <div class="carousel-text">
           <h4>Welcome To</h4>
@@ -42,11 +44,12 @@
         <div class="col-md-4" *ngFor="let package of packageList;">
           <div class="package-holder">
               <div class="pacakge-img-holder" [ngStyle]="{'background-image': 'url('+package.imgSrc+')'}">
+                  <!-- <img src="{{package.imgSrc}}" alt="{{package.imgName}}" class="img-fluid"> -->
                 </div>
                 <div class="package-info">
                   <h4 class="tour-name">{{package.tourName}}</h4>
                   <p class="tour-descp">{{package.tourDescp}}</p>
-                  <button class="btn btn-orange">Contact us</button>
+                  <button class="btn btn-orange" (click)="viewItinerary(package);">View Itinerary</button>
                 </div>
           </div>         
         </div>
@@ -95,6 +98,7 @@
               </ol>
             <div class="carousel-inner">
               <div class="carousel-item" *ngFor="let list of testimonalList; let i = index;" [ngClass]="{'active' : i == 0 }">
+                <!-- <img class="" src="{{list.imgSrc}}" alt="{{list.imgName}}"> -->
                 <h4>{{list.name}}</h4>
                 <p>{{list.descp}}</p>
               </div>
@@ -108,6 +112,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+      <!-- carousel -->
     </div>
   </div>
 </section>
@@ -115,17 +120,19 @@
 <div class="container">
   <h2 class="section-heading">About Us</h2>
   <div class="row">
-    <div class="col-md-offset-4 col-md-8">
-      <div class="about-imgholder">
-        <img src="/assets/imgs/intro-pic.jpg" alt="" class="img-fluid">
+    <div class="col-md-8 offset-md-2 ">
+      <div class="about-info">
+        <div class="about-imgholder">
+          <img src="/assets/imgs/intro-pic.jpg" alt="" class="">        
+        </div>
         <p>Thank you for visiting "India Tours with Vijay". Your driver, Vijay Singh, is an experienced driver with a wide range of knowledge covering many historical cities, monuments and locations.
-
+  
           We have a selection of cars to suit most needs - all fully insured and air conditioned. Please click on "About" to see "Our Fleet".
           
           We can propose tours for you or you can contact us for suggestions on how to create your own bespoke experience. Or, maybe, you simply need airport and hotel connections.
           
           Whatever your need, Vijay can help.</p>
-      </div>
+      </div>      
     </div>
   </div>
 </div>
@@ -178,6 +185,4 @@
       </div>
     </div>
   </div>
-</section> -->
-
-<router-outlet></router-outlet>
+</section>

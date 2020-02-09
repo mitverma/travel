@@ -27,6 +27,41 @@
 
 body {
     padding-bottom: 10px;
+    position: static !important;
+    top: 0 !important;
     // font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    div.skiptranslate {
+        display: none;
+    }
+    #google_translate_element {
+        display: inline-block;
+        position: fixed;
+        right: 10px;
+        top: 9px;
+        z-index: 11;
+        .skiptranslate {
+            display: block;
+            color: transparent;
+            > span {
+                display: none;
+            }
+
+            select {
+                height: 40px;
+                padding: 0 10px;
+                border: none;
+                color: #fff;
+                background-color: #ff6600;
+                font-family: 'Montserrat', sans-serif;
+                outline: none;
+                &:focus {
+                    outline: none;
+                }
+                option {
+                    padding: 10px;
+                }
+            }
+        }
+    }
 }

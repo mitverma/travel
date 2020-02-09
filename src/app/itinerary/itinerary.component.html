@@ -1,0 +1,20 @@
+<div class="back-button">
+  
+</div>
+<section class="banner-itinerary" [ngStyle]="{'background-image': 'url('+itineraryData.imgSrc+')'}">
+  <!-- <img src="{{itineraryData.imgSrc}}" alt="" class="img-fluid"> -->
+  <h4>{{itineraryData.tourName}}</h4>
+</section>
+<section class="itinerary-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="itinerary-container">
+          <div class="itinerary-listing" *ngFor="let list of itineraryData.itineraryDetail; let i = index">
+            <div><span class="day">Day {{i+1}}</span> <p class="day-detail">{{list}}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</section>
