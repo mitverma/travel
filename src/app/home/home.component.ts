@@ -45,39 +45,75 @@ export class HomeComponent implements OnInit {
     // package list
     this.packageList = [
       {
+        imgSrc: 'assets/imgs/slide1.jpg',
+        imgName: "Rajasthan Tour",
+        tourName: 'Tours in Rajasthan',
+        tourDescp: 'Lorem ipsum',
+        itineraryDetail: [
+          'Trip starts from Delhi.',
+          'After breakfast drive to Jaipur, on the way visit Fatehpur sikri. Chand bowri Abhaneri. Night at hotel.',
+          'Full day city tour of Jaipur. Night at hotel.',
+          'After breakfast drive to Pushkar, visit lord Brahma temple, Holi lake, walk in the colour full bazar, night at hotel.',
+          'After breakfast drive to Udaipur on the way, visit the largest Fort of Chittorgarh, after lunch drive to Udaipur. Night at hotel',
+          'After breakfast full day city tour of Udaipur. City palace, museum boat ride at lake pichola, saheliyon ki Bari. Sas bahu temple. Night at hotel.',
+          'After breakfast drive to Jodhpur, on the way visit the ancient Jain temple, after lunch drive to Jodhpur.',
+          'Full day city tour of Jodhpur. Visit Mehrangarh fort, Jaswant thara. Clocktower & spice market. Bishnoi village. Night at hotel.',
+          'After breakfast drive to Jaisalmer, night at hotel.', 
+          'After breakfast visit Gadisar Lake, Golden fort, Patuon ki Havely. Afternoon drive to small village Khuri. Where you can enjoy the camel ride, in the second largest desert in the world. After sunset, come back to the camp, where after tea coffee and snacks, you will see the local folk dance with bonfire. Dinner and night at the camp.',
+          'After breakfast drive to Bikaner. On the way visit the small village Khichan to see the thousands of the    Dimosile Sibarian cranes Night at Bikaner.',
+          'After breakfast visit the Junagarh fort & museum. Visit the old city to see the nice Havelies on the tuk tuk. After lunch, visit the camel breeding farm. Night at hotel',
+          'After breakfast drive to Mandawa, check in the hotel. Afternoon, visit the small and colourful town, with very nice old and painted Havelies.',
+          'After breakfast, drive back to Delhi.'
+        ]
+
+      },
+      {
+        imgSrc: 'assets/imgs/ranthambore.jpg',
+        imgName: 'Golden triangle tour with Ranthambore Tiger reserve',
+        tourName: 'Ranthambore Tiger reserve',
+        tourDescp: 'Lorem ipsum',
+        itineraryDetail : [
+          'Trip starts from Delhi.',
+          'After early breakfast. Drive to Agra, check in the hotel. Full day city tour of Agra. Night at hotel. ',
+          'After breakfast, drive to Ranthambore. Check in the hotel, afternoon jeep Safari to see the Tiger and other wildlife. Night at hotel.',
+          'Around 6 clock, in the morning, another jeep Safari to see the wild life. 10 clock back to the hotel. Have shower, breakfast and drive to Jaipur. Night at hotel.',
+          'After breakfast, a full day city tour of Jaipur, including monkey temple and Birla temple. Night at hotel.',
+          'After breakfast drive back to Delhi.',
+        ]
+      },
+      {
         imgSrc: 'assets/imgs/slide4.jpg',
         imgName: 'test',
         tourName: 'Tours in Agra',
         tourDescp: 'Free your mind with our Mountains & Mystics tour. The beautiful Himalayan foothills are shadowed by ice-covered peaks of the high Himalayas. ',
         itineraryDetail : [
-          'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel. ',
-          'After breakfast, drive to Jaipur, on the way visit the Fatehpur sikri. Chand bowri at Abhaneri. Night at hotel in Jaipur.',
-          'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Mina Ka kund. JAL Mahal. Block Printing. City palace & meusioum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel. ',
-          'After breakfast, drive back to Delhi. End of the tour.'
+          'Trip starts from Delhi.',
+          'Day tour of Agra.',
+          'Drive early in the morning to Agra, you will meet to the guide, he will escort you to see the Taj Mahal, Red fort, Mehtab Bagh and Baby Taj.',
+          'In the evening back to Delhi.',
         ]
       },
       {
-        imgSrc: 'assets/imgs/slide2.jpg',
+        imgSrc: 'assets/imgs/redfort.jpg',
         imgName: 'test',
-        tourName: 'Tours in Goa',
+        tourName: 'City tour in Delhi',
         tourDescp: 'Visit Jaipur, Agra for the Taj Mahal, Jodhpur, Udaipur (city of lakes) and Delhi, to experience the vibrancy of Rajasthan.',
         itineraryDetail : [
-          'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel. ',
-          'After breakfast, drive to Jaipur, on the way visit the Fatehpur sikri. Chand bowri at Abhaneri. Night at hotel in Jaipur.',
-          'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Mina Ka kund. JAL Mahal. Block Printing. City palace & meusioum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel. ',
-          'After breakfast, drive back to Delhi. End of the tour.'
+          'Trip starts from Delhi.',
+          'After breakfast, the tour will start from Jama Masjid. Raj Ghat. Akshardham temple. Humayoun tomb. Bangla Sahib Gurdwara. India gate. Parliament House. President palace. Qutub minar. Birla temple. End of the tour.'
         ]
       },
       {
-        imgSrc: 'assets/imgs/slide3.jpg',
+        imgSrc: 'assets/imgs/india-gate.jpg',
         imgName: 'test',
-        tourName: 'Tours in Amritsar',
+        tourName: 'Golden Triangle Tour.        ',
         tourDescp: 'Busy street life, vibrant colours, tranquil havens, culture shocks and architectural splendours await those who take the classic introduction to this vast and varied country. From Royal ruins to rich shopping opportunities, "The Golden Triangle" is an ideal trip for the first-time visitor to India.',
         itineraryDetail : [
-          'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel. ',
-          'After breakfast, drive to Jaipur, on the way visit the Fatehpur sikri. Chand bowri at Abhaneri. Night at hotel in Jaipur.',
-          'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Mina Ka kund. JAL Mahal. Block Printing. City palace & meusioum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel. ',
-          'After breakfast, drive back to Delhi. End of the tour.'
+         'Trip starts from Delhi.',
+         'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel.',
+         'After breakfast, drive to Jaipur, on the way visit Fatehpur sikri. Chand baori in Abhaneri. Night at hotel in Jaipur.',
+         'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Meena Ka kund. JAL Mahal. Block Printing. City palace & museum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel.',
+         'After breakfast, drive back to Delhi.',
         ]
       },
     ];
@@ -86,41 +122,47 @@ export class HomeComponent implements OnInit {
       {
         imgIcon: 'assets/imgs/service-icon1.png',
         heading: 'Happy Clients',
-        descp: 'Lorem ipsum dummy text and dummy value Lorem ipsum dummy text and dummy value  ',
+        descp: 'We believe in quality services from our ground staff, so as we impart the same to our guest. For us customer satisfaction is very important',
       },
       {
         imgIcon: 'assets/imgs/service-icon2.png',
         heading: 'Amazing Tour',
-        descp: 'Lorem ipsum dummy text and dummy value Lorem ipsum dummy text and dummy value ',
+        descp: 'Amazing tours and packages also have good deals with most of the Hotels, Budgeted, luxury and Heritage in All over India ',
       },
       {
         imgIcon: 'assets/imgs/service-icon3.png',
         heading: 'Support Cases',
-        descp: 'Lorem ipsum dummy text and dummy value Lorem ipsum dummy text and dummy value ',
+        descp: 'We arrange tours for domestic, international, inbound and pilgrim tourists by taking under -consideration the desire and budget of a tourist.',
       },
       {
         imgIcon: 'assets/imgs/service-icon4.png',
         heading: 'Special Offers',
-        descp: 'Lorem ipsum dummy text and dummy value Lorem ipsum dummy text and dummy value ',
+        descp: 'We will provide you the best transport services of its own, Innova, Ertiga,Dezire, Etios, Tempo traveler, Luxury Buses.as per your budget and need.',
       },
     ];
     this.galleryList = [
-      'assets/imgs/gallery/g1.jpeg',
-      'assets/imgs/gallery/g2.jpg',
-      'assets/imgs/gallery/g3.jpg',
-      'assets/imgs/gallery/g9.jpeg',
-      'assets/imgs/gallery/g4.jpg',
-      // 'assets/imgs/gallery/g6.jpg',
-      'assets/imgs/gallery/g7.jpg',
-      'assets/imgs/gallery/g8.jpg',
+      'assets/imgs/gallery/first.jpg',
+      'assets/imgs/gallery/second.jpg',
       'assets/imgs/gallery/g5.jpg',
-      'assets/imgs/gallery/g10.jpg',
-      // 'assets/imgs/gallery/slide1.jpg',
-      // 'assets/imgs/gallery/slide2.jpg',
-      // 'assets/imgs/gallery/slide3.jpg',
-      // 'assets/imgs/gallery/slide4.jpg',
-    ];
+      // 'assets/imgs/gallery/seventh.jpg',
+      'assets/imgs/gallery/g1.jpg',
+      'assets/imgs/gallery/fifth.jpg',
 
+      // 'assets/imgs/gallery/sixth.jpg',
+      'assets/imgs/gallery/client1-2.jpeg',
+      'assets/imgs/gallery/third.jpg',
+      'assets/imgs/gallery/g10.jpg',
+      // 'assets/imgs/gallery/g4.jpg',
+      'assets/imgs/gallery/g2.jpg',
+      'assets/imgs/gallery/g7.jpg',
+      
+      'assets/imgs/gallery/forth.jpg',
+      'assets/imgs/gallery/client1.jpeg',
+      'assets/imgs/gallery/g8.jpg',
+      // 'assets/imgs/gallery/g3.jpg',
+      'assets/imgs/gallery/g9.jpeg',
+    ];
+    
     this.testimonalList = [
       {
         name: 'SIR STUART & LADY HAMPSON, UK',
@@ -155,9 +197,12 @@ export class HomeComponent implements OnInit {
         descp: 'To describe Vijay simply as a driver is a monumental understatement. He has shown us parts of India that guide books cannot. His experience gave us many hints and sound advice (subtly delivered) about our shopping, tipping, etc. as he steered us through many bewildering facets of Indian life.',
       },
     ];
+
   }
 
   ngOnInit() {
+    this.galleryList = this.chunkArray(this.galleryList, 5);
+    console.log(this.galleryList, 'list');
   }
 
   scroll(el: HTMLElement, event: any){
@@ -189,19 +234,19 @@ export class HomeComponent implements OnInit {
         elemn.classList.remove("active");
       })
     }
-    if ( document.documentElement.scrollTop == 0  || (document.documentElement.scrollTop > bannerDiv.offsetTop) && document.documentElement.scrollTop < tourDiv.offsetTop){
+    if ((document.getElementsByClassName('menu-home') && document.getElementsByClassName('menu-home')[0]) && document.documentElement.scrollTop == 0  || (document.documentElement.scrollTop > bannerDiv.offsetTop) && document.documentElement.scrollTop < tourDiv.offsetTop){
       document.getElementsByClassName('menu-home')[0].classList.add('active');
-    }else if( (document.documentElement.scrollTop+ 60) >= tourDiv.offsetTop && (document.documentElement.scrollTop+ 60) < galleryDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-tour') && document.getElementsByClassName('menu-tour')[0]) && (document.documentElement.scrollTop+ 60) >= tourDiv.offsetTop && (document.documentElement.scrollTop+ 60) < galleryDiv.offsetTop){
       document.getElementsByClassName('menu-tour')[0].classList.add('active');   
-    }else if( (document.documentElement.scrollTop+ 60) >= galleryDiv.offsetTop && (document.documentElement.scrollTop+ 60) < serviceDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-gallery') && document.getElementsByClassName('menu-gallery')[0]) &&(document.documentElement.scrollTop+ 60) >= galleryDiv.offsetTop && (document.documentElement.scrollTop+ 60) < serviceDiv.offsetTop){
       document.getElementsByClassName('menu-gallery')[0].classList.add('active');   
-    }else if( ((document.documentElement.scrollTop+ 60)) >= serviceDiv.offsetTop && (document.documentElement.scrollTop+ 60) < testimonalDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-service') && document.getElementsByClassName('menu-service')[0]) && ((document.documentElement.scrollTop+ 60)) >= serviceDiv.offsetTop && (document.documentElement.scrollTop+ 60) < testimonalDiv.offsetTop){
       document.getElementsByClassName('menu-service')[0].classList.add('active');   
-    }else if( (document.documentElement.scrollTop+ 60) >= testimonalDiv.offsetTop && (document.documentElement.scrollTop+ 60) < aboutDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-testimonal') && document.getElementsByClassName('menu-testimonal')[0]) && (document.documentElement.scrollTop+ 60) >= testimonalDiv.offsetTop && (document.documentElement.scrollTop+ 60) < aboutDiv.offsetTop){
       document.getElementsByClassName('menu-testimonal')[0].classList.add('active');   
-    }else if( (document.documentElement.scrollTop+ 60) >= aboutDiv.offsetTop && (document.documentElement.scrollTop+ 60) < contactDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-about') && document.getElementsByClassName('menu-about')[0]) && (document.documentElement.scrollTop+ 60) >= aboutDiv.offsetTop && (document.documentElement.scrollTop+ 60) < contactDiv.offsetTop){
       document.getElementsByClassName('menu-about')[0].classList.add('active');   
-    }else if( (document.documentElement.scrollTop+ 60) >= contactDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-contact') && document.getElementsByClassName('menu-contact')[0]) && (document.documentElement.scrollTop+ 60) >= contactDiv.offsetTop){
       document.getElementsByClassName('menu-contact')[0].classList.add('active');   
     }
 
@@ -219,6 +264,21 @@ export class HomeComponent implements OnInit {
       this.route.navigate(['/itinerary']);
     }
   }
+
+
+  chunkArray(myArray, chunk_size){
+    let index = 0;
+    let arrayLength = myArray.length;
+    let tempArray = [];
+    let myChunk: any;
+    for (index = 0; index < arrayLength; index += chunk_size) {
+        myChunk = myArray.slice(index, index+chunk_size);
+        // Do something if you want with the group
+        tempArray.push(myChunk);
+    }
+
+    return tempArray;
+}
 
 
   

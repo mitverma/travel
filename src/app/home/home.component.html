@@ -8,7 +8,7 @@
       <li><a class="menu-heading menu-tour" (click)="scroll(tours, $event)">Tours</a></li>
       <li><a class="menu-heading menu-gallery" (click)="scroll(gallery, $event)">Gallery</a></li>
       <li><a class="menu-heading menu-service" (click)="scroll(service, $event)">Services</a></li>
-      <li><a class="menu-heading menu-testimonal" (click)="scroll(testimonal, $event)">Testimonals</a></li>
+      <li><a class="menu-heading menu-testimonal" (click)="scroll(testimonal, $event)">Testimonials</a></li>
       <li><a class="menu-heading menu-about" (click)="scroll(about, $event)">About Us</a></li>
       <li><a class="menu-heading menu-contact" (click)="scroll(contact, $event)">Contact</a></li>
     </ul>
@@ -61,8 +61,19 @@
     <div class="container">
       <h2 class="section-heading">Gallery</h2>
       <div class="masonry-layout">
-        <div class="img-holder" *ngFor="let gallery of galleryList;">
-          <img src="{{gallery}}" alt="">
+        <div class="" >
+          <!-- <div class="img-holder" *ngFor="let gallery of galleryList">
+            <img src="{{gallery}}" alt="">
+            <div class="descp">Travel India tours</div>
+          </div> -->
+        </div>
+        <div class="row" >
+          <div class="col-md-4" *ngFor="let gallery of galleryList">
+             <div class="img-holder" *ngFor="let list of gallery">
+               <img src="{{list}}" alt="">
+              <div class="descp">Travel India tours</div>
+          </div>
+          </div>
         </div>
       </div>
     </div>

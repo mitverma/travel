@@ -5,6 +5,25 @@
     font-family: 'Montserrat', sans-serif;
  }
 
+ app-itinerary {
+     position: relative;
+ }
+ .back-button {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+ }
 
 .banner-itinerary {
     height: 75vh;
@@ -12,6 +31,13 @@
     position: relative;
     background-position: 50%;
     background-size: cover;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+        position: absolute;
+    }
     h4 {
         position: absolute;
         top: 50%;
