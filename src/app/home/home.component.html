@@ -153,20 +153,30 @@
     <h2 class="section-heading">Contact</h2>
     <div class="row">
       <div class="col-md-6">
-        <form action="" class="review-form">
+        <p *ngIf="formhasError">Kindly fill all details</p>
+        <form [formGroup]="contactForm" class="review-form" (ngSubmit)="submitReview(contactForm)">
           <div class="row">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Enter your name">
+              <input type="text" name="name" class="form-control" placeholder="Enter your name" formControlName="userName">
             </div>
             <div class="col-md-6">
-              <input type="email" class="form-control" placeholder="Enter your email">
+              <input type="email" class="form-control" name="email" placeholder="Enter your email " formControlName="emailId">
             </div>
           </div>
-          <textarea class="form-control" name="" id="" placeholder="Enter your reviews ..." cols="30" rows="10"></textarea>  
+          <textarea class="form-control" name="reviews" id="" placeholder="Enter your reviews ..." cols="30" rows="10"  formControlName="message"></textarea>  
           <div>
             <button class="btn btn-orange">Submit</button>
           </div>
         </form>
+        <div class="thankyou-message" *ngIf="viewMessage">
+          <p>Thank you for your valueable feedback!</p>
+        </div>
+
+        <!-- <form action="https://formspree.io/mdozjgkw" method="POST">
+          <input type="text" name="name">
+          <input type="email" name="_replyto">
+          <input type="submit" value="Send">
+        </form> -->
       </div>
       <div class="col-md-6">
         <div class="contact-info">
@@ -174,11 +184,11 @@
           <ul>
             <li>
               <img src="assets/imgs/phone.svg" alt="" height="30px" class="img-icon">
-              <span class="info">+91-9540515893</span>
+              <span class="info"><a href="tel:+919540515893">+91-9540515893</a></span>
             </li>
             <li>
               <img src="assets/imgs/mail.svg" alt="" height="25px" class="img-icon">
-              <span class="info">vijay@tours.com</span>
+              <span class="info"><a href="mailto:vijayindiatours7@gmail.com">vijayindiatours7@gmail.com</a></span>
             </li>
             <li>
               <img src="assets/imgs/pin.svg" alt="" height="30px" class="img-icon">
@@ -188,9 +198,9 @@
         </div>
         <div class="social-icon">
           <ul>
-            <li><a href=""><img src="assets/imgs/facebook.svg" alt="" class="facebook" height="30px"></a></li>
+            <li><a href="https://www.facebook.com/people/Vijay-Singh/100027095632749" target="_blank"><img src="assets/imgs/facebook.svg" alt="" class="facebook" height="30px"></a></li>
             <li><a href=""><img src="assets/imgs/instagram.svg" alt="" class="instagram" height="30px"></a></li>
-            <li><a href=""><img src="assets/imgs/whatsapp.svg" alt="" class="whatsapp" height="30px"></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=+919650684077" target="_blank"><img src="assets/imgs/whatsapp.svg" alt="" class="whatsapp" height="30px"></a></li>
           </ul>
         </div>
       </div>

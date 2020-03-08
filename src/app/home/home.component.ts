@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ItineraryService } from '../itinerary.service';
+import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup,Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,15 @@ export class HomeComponent implements OnInit {
   galleryList: any = [];
   testimonalList: any = [];
   showMenu: boolean = true;
-  constructor(public itineraryService: ItineraryService, public route: Router) {
+  viewMessage:boolean = false;
+  formhasError: boolean = false;
+  contactForm: FormGroup;
+  constructor(public itineraryService: ItineraryService, public route: Router, public http: HttpClient) {
+    this.contactForm = new FormGroup({
+      userName: new FormControl(null, [Validators.required]),
+      emailId: new FormControl(null, [Validators.required]),
+      message: new FormControl(null, [Validators.required])
+    })
     this.bannerList = [
       {
         imgSrc: 'assets/imgs/slide6.jpg',
@@ -48,7 +58,7 @@ export class HomeComponent implements OnInit {
         imgSrc: 'assets/imgs/slide1.jpg',
         imgName: "Rajasthan Tour",
         tourName: 'Tours in Rajasthan',
-        tourDescp: 'Lorem ipsum',
+        tourDescp: 'Architectural wonders, exquisite handicrafts, colourful culture and tempting cuisine are few of the many highlights of this magnificent state. Set amidst a vast desert, the magical land of Rajasthan is synonymous with romance and chivalry.',
         itineraryDetail: [
           'Trip starts from Delhi.',
           'After breakfast drive to Jaipur, on the way visit Fatehpur sikri. Chand bowri Abhaneri. Night at hotel.',
@@ -71,7 +81,7 @@ export class HomeComponent implements OnInit {
         imgSrc: 'assets/imgs/ranthambore.jpg',
         imgName: 'Golden triangle tour with Ranthambore Tiger reserve',
         tourName: 'Ranthambore Tiger reserve',
-        tourDescp: 'Lorem ipsum',
+        tourDescp: 'Ranthambore National Park is a vast wildlife reserve near the town of Sawai Madhopur in Rajasthan, northern India. It is a former royal hunting ground and home to tigers, leopards and marsh crocodiles. Its landmarks include the imposing 10th-century Ranthambore Fort, on a hilltop, and the Ganesh Mandir temple. Also in the park, Padam Talao Lake is known for its abundance of water lilies.',
         itineraryDetail : [
           'Trip starts from Delhi.',
           'After early breakfast. Drive to Agra, check in the hotel. Full day city tour of Agra. Night at hotel. ',
@@ -85,7 +95,7 @@ export class HomeComponent implements OnInit {
         imgSrc: 'assets/imgs/slide4.jpg',
         imgName: 'test',
         tourName: 'Tours in Agra',
-        tourDescp: 'Free your mind with our Mountains & Mystics tour. The beautiful Himalayan foothills are shadowed by ice-covered peaks of the high Himalayas. ',
+        tourDescp: 'Home to one of the 7 wonders of the world, the Taj Mahal, Agra is a sneak peek into the architectural history with other UNESCO World Heritage Sites as Agra Fort and Fatehpur Sikri. History, architecture, romance all together create the magic of Agra and hence makes for a must-visit for anyone living in or visiting India.',
         itineraryDetail : [
           'Trip starts from Delhi.',
           'Day tour of Agra.',
@@ -143,21 +153,25 @@ export class HomeComponent implements OnInit {
     this.galleryList = [
       'assets/imgs/gallery/first.jpg',
       'assets/imgs/gallery/second.jpg',
+      'assets/imgs/gallery/client3.jpeg',
       'assets/imgs/gallery/g5.jpg',
       // 'assets/imgs/gallery/seventh.jpg',
       'assets/imgs/gallery/g1.jpg',
       'assets/imgs/gallery/fifth.jpg',
 
       // 'assets/imgs/gallery/sixth.jpg',
-      'assets/imgs/gallery/client1-2.jpeg',
+      // 'assets/imgs/gallery/client1-2.jpeg',
+      'assets/imgs/gallery/client4.jpeg',
       'assets/imgs/gallery/third.jpg',
       'assets/imgs/gallery/g10.jpg',
       // 'assets/imgs/gallery/g4.jpg',
       'assets/imgs/gallery/g2.jpg',
       'assets/imgs/gallery/g7.jpg',
       
+      'assets/imgs/gallery/client5.jpeg',
       'assets/imgs/gallery/forth.jpg',
       'assets/imgs/gallery/client1.jpeg',
+      'assets/imgs/gallery/client7.jpeg',
       'assets/imgs/gallery/g8.jpg',
       // 'assets/imgs/gallery/g3.jpg',
       'assets/imgs/gallery/g9.jpeg',
@@ -201,7 +215,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.galleryList = this.chunkArray(this.galleryList, 5);
+    this.galleryList = this.chunkArray(this.galleryList, 6);
     console.log(this.galleryList, 'list');
   }
 
@@ -278,6 +292,32 @@ export class HomeComponent implements OnInit {
     }
 
     return tempArray;
+}
+
+
+submitReview(formData){
+  let headers: any = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+    if(formData.valid) {
+      this.http.post('https://formspree.io/mdozjgkw', formData.value, headers).subscribe((data)=> {
+        if(data && data['ok']) {
+          this.viewMessage = true;
+          setTimeout(() => {
+            this.viewMessage = false;
+            this.contactForm.reset();
+          }, 2400);
+        }
+    }, error => {
+      console.log(error, 'error');
+    });
+  }else {
+    this.formhasError = true;
+    setTimeout(()=> {
+      this.formhasError = false;
+    }, 2400);
+  }
 }
 
 

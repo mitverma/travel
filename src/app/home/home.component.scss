@@ -375,6 +375,11 @@ section {
             textarea {
                 resize: none;
             }
+
+            .thankyou-message {
+                padding: 20px 0px 0;
+                font-size: 20px;
+            }
         }
         .contact-info {
             .contact-heading {
@@ -393,6 +398,13 @@ section {
                         display: inline-block;
                         letter-spacing: 2px;
                         vertical-align: top;
+                        a {
+                            color: #000;
+                            outline: none;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
                     }
                 }
             }
