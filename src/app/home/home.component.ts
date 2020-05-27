@@ -18,11 +18,14 @@ export class HomeComponent implements OnInit {
   showMenu: boolean = true;
   viewMessage:boolean = false;
   formhasError: boolean = false;
+  viewModal: any;
+  allGalleryImg: any;
   contactForm: FormGroup;
   constructor(public itineraryService: ItineraryService, public route: Router, public http: HttpClient) {
     this.contactForm = new FormGroup({
       userName: new FormControl(null, [Validators.required]),
       emailId: new FormControl(null, [Validators.required]),
+      location: new FormControl(null, [Validators.required]),
       message: new FormControl(null, [Validators.required])
     })
     this.bannerList = [
@@ -57,75 +60,80 @@ export class HomeComponent implements OnInit {
       {
         imgSrc: 'assets/imgs/slide1.jpg',
         imgName: "Rajasthan Tour",
+        cssClass: '',
         tourName: 'Tours in Rajasthan',
         tourDescp: 'Architectural wonders, exquisite handicrafts, colourful culture and tempting cuisine are few of the many highlights of this magnificent state. Set amidst a vast desert, the magical land of Rajasthan is synonymous with romance and chivalry.',
         itineraryDetail: [
-          'Trip starts from Delhi.',
+          'After breakfast drive to Agra, city tour of Agra. Night at hotel.',        
           'After breakfast drive to Jaipur, on the way visit Fatehpur sikri. Chand bowri Abhaneri. Night at hotel.',
           'Full day city tour of Jaipur. Night at hotel.',
           'After breakfast drive to Pushkar, visit lord Brahma temple, Holi lake, walk in the colour full bazar, night at hotel.',
-          'After breakfast drive to Udaipur on the way, visit the largest Fort of Chittorgarh, after lunch drive to Udaipur. Night at hotel',
-          'After breakfast full day city tour of Udaipur. City palace, museum boat ride at lake pichola, saheliyon ki Bari. Sas bahu temple. Night at hotel.',
+          'After breakfast drive to Udaipur on the way, visit the largest Fort of Chittorgarh, after lunch drive to Udaipur. Night at hotel.',
+          'After breakfast full day city tour of Udaipur. City palace, mesuem boat ride at lake pichola, saheliyon ki Bari. Sas bahu temple. Night at hotel.',
           'After breakfast drive to Jodhpur, on the way visit the ancient Jain temple, after lunch drive to Jodhpur.',
-          'Full day city tour of Jodhpur. Visit Mehrangarh fort, Jaswant thara. Clocktower & spice market. Bishnoi village. Night at hotel.',
+          'Full day city tour of Jodhpur.Visit Mehrangarh fort, Jaswant thara. Clocktower & spice market. Bishnoi village. Night at hotel.',
           'After breakfast drive to Jaisalmer, night at hotel.', 
-          'After breakfast visit Gadisar Lake, Golden fort, Patuon ki Havely. Afternoon drive to small village Khuri. Where you can enjoy the camel ride, in the second largest desert in the world. After sunset, come back to the camp, where after tea coffee and snacks, you will see the local folk dance with bonfire. Dinner and night at the camp.',
+          'After breakfast visit the. Gadisarlake. Golden fort. Patuon ki Havely. Afternoon drive to small village Khuri. Where you can enjoy the camel ride, in the second largest desert in the world. After sunset, come back to the camp, where after tea coffee and snacks, you will see the local folk dance with bonfire. Dinner and night at the camp.',
           'After breakfast drive to Bikaner. On the way visit the small village Khichan to see the thousands of the    Dimosile Sibarian cranes Night at Bikaner.',
-          'After breakfast visit the Junagarh fort & museum. Visit the old city to see the nice Havelies on the tuk tuk. After lunch, visit the camel breeding farm. Night at hotel',
-          'After breakfast drive to Mandawa, check in the hotel. Afternoon, visit the small and colourful town, with very nice old and painted Havelies.',
-          'After breakfast, drive back to Delhi.'
+          'After breakfast visit the Junagarh fort & mesuem. Visit the old city to see the nice Havelies on the tuk tuk. After lunch, visit the camel breading farm. Night at hotel.',
+          'After breakfast drive to Mandawa, check in the hotel. Afternoon, visit the small and colourful town, with very nice old and painted Havelies. Night at hotel.',
+          'After breakfast, drive back to Delhi. End of the tour'
         ]
 
       },
       {
         imgSrc: 'assets/imgs/ranthambore.jpg',
         imgName: 'Golden triangle tour with Ranthambore Tiger reserve',
-        tourName: 'Ranthambore Tiger reserve',
+        cssClass: '',
+        tourName: 'Golden triangle tour with Ranthambor Tiger reserve.',
         tourDescp: 'Ranthambore National Park is a vast wildlife reserve near the town of Sawai Madhopur in Rajasthan, northern India. It is a former royal hunting ground and home to tigers, leopards and marsh crocodiles. Its landmarks include the imposing 10th-century Ranthambore Fort, on a hilltop, and the Ganesh Mandir temple. Also in the park, Padam Talao Lake is known for its abundance of water lilies.',
         itineraryDetail : [
-          'Trip starts from Delhi.',
-          'After early breakfast. Drive to Agra, check in the hotel. Full day city tour of Agra. Night at hotel. ',
-          'After breakfast, drive to Ranthambore. Check in the hotel, afternoon jeep Safari to see the Tiger and other wildlife. Night at hotel.',
-          'Around 6 clock, in the morning, another jeep Safari to see the wild life. 10 clock back to the hotel. Have shower, breakfast and drive to Jaipur. Night at hotel.',
-          'After breakfast, a full day city tour of Jaipur, including monkey temple and Birla temple. Night at hotel.',
-          'After breakfast drive back to Delhi.',
+          'After early breakfast. Drive to Agra, check in the hotel. Full day city tour of Agra. Night at hotel.',
+          'After breakfast, drive to Ranthambor. Check in the hotel, afternoon jeep Safari to see the Tiger and other wildlife. Night at hotel.',
+          'Around 6 clock, in the morning, another jeep Safari to see the wild life. 10 clock back to hotel. Have shower, breakfast and drive to Jaipur. Night at hotel.',
+          'After breakfast full day city tour of Jaipur, including monkey temple and Birla temple. Night at hotel.',
+          'After breakfast drive back to Delhi. End of the tour.',
         ]
       },
       {
         imgSrc: 'assets/imgs/slide4.jpg',
         imgName: 'test',
-        tourName: 'Tours in Agra',
-        tourDescp: 'Home to one of the 7 wonders of the world, the Taj Mahal, Agra is a sneak peek into the architectural history with other UNESCO World Heritage Sites as Agra Fort and Fatehpur Sikri. History, architecture, romance all together create the magic of Agra and hence makes for a must-visit for anyone living in or visiting India.',
+        cssClass: 'no-list',
+        tourName: 'Tours Programs',
+        tourDescp: 'Here you can visit and know about all our tours and details. Single day and Package tours. Visit Taj Mahal, Golden Triangle Tour Haridawar and Varansi and so on',
         itineraryDetail : [
-          'Trip starts from Delhi.',
-          'Day tour of Agra.',
-          'Drive early in the morning to Agra, you will meet to the guide, he will escort you to see the Taj Mahal, Red fort, Mehtab Bagh and Baby Taj.',
-          'In the evening back to Delhi.',
+          'Day visit to see the Taj Mahal.',
+          'Golden triangle tour.',
+          'Golden triangle tour with Ranthambor Tiger reserve.',
+          'Rajasthan Tour.',
+          'Heritage Rajasthan tour.',
+          'Central India Tour with Varanasi.',
+          'Hill stations tour with Golden temple Amritsar.',
+          'Hill stations tour with, Haridwar & Rishikesh.',
+          'Also the trip to see the birds and wild life.',
         ]
       },
-      {
-        imgSrc: 'assets/imgs/redfort.jpg',
-        imgName: 'test',
-        tourName: 'City tour in Delhi',
-        tourDescp: 'Visit Jaipur, Agra for the Taj Mahal, Jodhpur, Udaipur (city of lakes) and Delhi, to experience the vibrancy of Rajasthan.',
-        itineraryDetail : [
-          'Trip starts from Delhi.',
-          'After breakfast, the tour will start from Jama Masjid. Raj Ghat. Akshardham temple. Humayoun tomb. Bangla Sahib Gurdwara. India gate. Parliament House. President palace. Qutub minar. Birla temple. End of the tour.'
-        ]
-      },
-      {
-        imgSrc: 'assets/imgs/india-gate.jpg',
-        imgName: 'test',
-        tourName: 'Golden Triangle Tour.        ',
-        tourDescp: 'Busy street life, vibrant colours, tranquil havens, culture shocks and architectural splendours await those who take the classic introduction to this vast and varied country. From Royal ruins to rich shopping opportunities, "The Golden Triangle" is an ideal trip for the first-time visitor to India.',
-        itineraryDetail : [
-         'Trip starts from Delhi.',
-         'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel.',
-         'After breakfast, drive to Jaipur, on the way visit Fatehpur sikri. Chand baori in Abhaneri. Night at hotel in Jaipur.',
-         'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Meena Ka kund. JAL Mahal. Block Printing. City palace & museum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel.',
-         'After breakfast, drive back to Delhi.',
-        ]
-      },
+      // {
+      //   imgSrc: 'assets/imgs/redfort.jpg',
+      //   imgName: 'test',
+      //   tourName: 'City tour in Delhi',
+      //   tourDescp: 'Visit Jaipur, Agra for the Taj Mahal, Jodhpur, Udaipur (city of lakes) and Delhi, to experience the vibrancy of Rajasthan.',
+      //   itineraryDetail : [
+      //     'After breakfast, the tour will start from Jama Masjid. Raj Ghat. Akshardham temple. Humayoun tomb. Bangla Sahib Gurdwara. India gate. Parliament House. President palace. Qutub minar. Birla temple. End of the tour.'
+      //   ]
+      // },
+      // {
+      //   imgSrc: 'assets/imgs/india-gate.jpg',
+      //   imgName: 'test',
+      //   tourName: 'Golden Triangle Tour.        ',
+      //   tourDescp: 'Busy street life, vibrant colours, tranquil havens, culture shocks and architectural splendours await those who take the classic introduction to this vast and varied country. From Royal ruins to rich shopping opportunities, "The Golden Triangle" is an ideal trip for the first-time visitor to India.',
+      //   itineraryDetail : [
+      //    'After early breakfast, drive to Agra. Visit the Taj Mahal. Red Fort. Mehtab Bagh. Mini Taj Mahal. May be in the evening, you can go to see the live dancing show, about the life of the Shahjahan, at Kalakriti. Night at hotel.',
+      //    'After breakfast, drive to Jaipur, on the way visit Fatehpur sikri. Chand baori in Abhaneri. Night at hotel in Jaipur.',
+      //    'After breakfast, drive to see the wind palace just a photo stop. Amber palace. Panna Meena Ka kund. JAL Mahal. Block Printing. City palace & museum. Jantar Mantar. Monkey temple. Arti at Birla temple night at hotel.',
+      //    'After breakfast, drive back to Delhi.',
+      //   ]
+      // },
     ];
 
     this.serviceList = [
@@ -163,6 +171,7 @@ export class HomeComponent implements OnInit {
       // 'assets/imgs/gallery/client1-2.jpeg',
       'assets/imgs/gallery/client4.jpeg',
       'assets/imgs/gallery/third.jpg',
+      'assets/imgs/gallery/g11.jpeg',
       'assets/imgs/gallery/g10.jpg',
       // 'assets/imgs/gallery/g4.jpg',
       'assets/imgs/gallery/g2.jpg',
@@ -252,11 +261,13 @@ export class HomeComponent implements OnInit {
       document.getElementsByClassName('menu-home')[0].classList.add('active');
     }else if((document.getElementsByClassName('menu-tour') && document.getElementsByClassName('menu-tour')[0]) && (document.documentElement.scrollTop+ 60) >= tourDiv.offsetTop && (document.documentElement.scrollTop+ 60) < galleryDiv.offsetTop){
       document.getElementsByClassName('menu-tour')[0].classList.add('active');   
-    }else if((document.getElementsByClassName('menu-gallery') && document.getElementsByClassName('menu-gallery')[0]) &&(document.documentElement.scrollTop+ 60) >= galleryDiv.offsetTop && (document.documentElement.scrollTop+ 60) < serviceDiv.offsetTop){
+    }else if((document.getElementsByClassName('menu-gallery') && document.getElementsByClassName('menu-gallery')[0]) &&(document.documentElement.scrollTop+ 60) >= galleryDiv.offsetTop && (document.documentElement.scrollTop+ 60) < testimonalDiv.offsetTop){
       document.getElementsByClassName('menu-gallery')[0].classList.add('active');   
-    }else if((document.getElementsByClassName('menu-service') && document.getElementsByClassName('menu-service')[0]) && ((document.documentElement.scrollTop+ 60)) >= serviceDiv.offsetTop && (document.documentElement.scrollTop+ 60) < testimonalDiv.offsetTop){
-      document.getElementsByClassName('menu-service')[0].classList.add('active');   
-    }else if((document.getElementsByClassName('menu-testimonal') && document.getElementsByClassName('menu-testimonal')[0]) && (document.documentElement.scrollTop+ 60) >= testimonalDiv.offsetTop && (document.documentElement.scrollTop+ 60) < aboutDiv.offsetTop){
+    }
+    // else if((document.getElementsByClassName('menu-service') && document.getElementsByClassName('menu-service')[0]) && ((document.documentElement.scrollTop+ 60)) >= serviceDiv.offsetTop && (document.documentElement.scrollTop+ 60) < testimonalDiv.offsetTop){
+    //   document.getElementsByClassName('menu-service')[0].classList.add('active');   
+    // }
+    else if((document.getElementsByClassName('menu-testimonal') && document.getElementsByClassName('menu-testimonal')[0]) && (document.documentElement.scrollTop+ 60) >= testimonalDiv.offsetTop && (document.documentElement.scrollTop+ 60) < aboutDiv.offsetTop){
       document.getElementsByClassName('menu-testimonal')[0].classList.add('active');   
     }else if((document.getElementsByClassName('menu-about') && document.getElementsByClassName('menu-about')[0]) && (document.documentElement.scrollTop+ 60) >= aboutDiv.offsetTop && (document.documentElement.scrollTop+ 60) < contactDiv.offsetTop){
       document.getElementsByClassName('menu-about')[0].classList.add('active');   
@@ -320,6 +331,16 @@ submitReview(formData){
   }
 }
 
+
+showModal(){
+  this.allGalleryImg = this.galleryList[0].concat(this.galleryList[1], this.galleryList[2]);
+  console.log(this.allGalleryImg, 'gallery list');
+  this.viewModal = true;
+}
+
+closeModal(){
+  this.viewModal = false;
+}
 
   
 

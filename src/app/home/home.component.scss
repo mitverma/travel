@@ -201,6 +201,7 @@ section {
         .package-info {
             background-color: #fff;
             .tour-name {
+                min-height: 60px;
                 font-size: 23px;
                 @extend.font-beba;
                 letter-spacing: 4px;
@@ -261,34 +262,28 @@ section {
             // column-count: 3;
             .img-holder {
                 width: 100%;
-                // padding: 5px;
                 margin-bottom: 25px;
-                // display: flex;
-                // flex-wrap: wrap;
                 position: relative;
                 cursor: pointer;
-                // transform: translateZ(0);
                 overflow: hidden;
-                &:after {
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    right: 0;
-                    bottom: 0;
-                    transform: translate(-50%, -50%);
-                    background-color: transparent;
-                    transition: all 150ms linear;
-                }
+                // &:after {
+                //     content: '';
+                //     width: 100%;
+                //     height: auto;
+                //     position: absolute;
+                //     left: 0;
+                //     bottom: 0;
+                //     background-color: transparent;
+                //     transition: all 150ms linear;
+                // }
                 &:hover {
                     transition: all 150ms linear;
-                    &:after {
-                        background-color: rgba(0, 0, 0, 0.65);
-                    }
+                    // &:after {
+                    //     background-color: rgba(0, 0, 0, 0.65);
+                    // }
                     .descp {
-                        opacity: 1;
+                        transition: all 200ms linear;
+                        transform: translateY(0);
                     }
                 }
                 img {
@@ -297,13 +292,16 @@ section {
                     border-radius: 4px;
                 }
                 .descp {
+                    width: 100%;
+                    padding: 10px 0;
                     position: absolute;
-                    bottom: 10px;
-                    left: 50%;
-                    transform: translate(-50%, 0);
+                    bottom: 0px;
+                    background-color: rgba(0,0,0,.65);
                     color: #fff;
                     z-index: 1;
-                    opacity: 0;
+                    transform: translateY(100%);
+                    text-align: center;
+                    transition: all 200ms linear;
                     @extend.font-mont;
                 }
             }
@@ -358,6 +356,7 @@ section {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                zoom: 0.3; //remove after 
             }
             + p {
                 line-height: 35px;

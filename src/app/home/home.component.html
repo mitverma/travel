@@ -7,8 +7,8 @@
       <li><a class="menu-heading menu-home active" (click)="scroll(banner, $event)" >Home</a></li>
       <li><a class="menu-heading menu-tour" (click)="scroll(tours, $event)">Tours</a></li>
       <li><a class="menu-heading menu-gallery" (click)="scroll(gallery, $event)">Gallery</a></li>
-      <li><a class="menu-heading menu-service" (click)="scroll(service, $event)">Services</a></li>
-      <li><a class="menu-heading menu-testimonal" (click)="scroll(testimonal, $event)">Testimonials</a></li>
+      <!-- <li><a class="menu-heading menu-service" (click)="scroll(service, $event)">Services</a></li> -->
+      <li><a class="menu-heading menu-testimonal" (click)="scroll(testimonal, $event)">Reviews</a></li>
       <li><a class="menu-heading menu-about" (click)="scroll(about, $event)">About Us</a></li>
       <li><a class="menu-heading menu-contact" (click)="scroll(contact, $event)">Contact</a></li>
     </ul>
@@ -41,7 +41,7 @@
     <h2 class="section-heading">Popular Packages</h2>
     <div class="package-wrapper">
       <div class="package-list-holder row">
-        <div class="col-md-4" *ngFor="let package of packageList;">
+        <div class="col-md-4" *ngFor="let package of packageList; let i = index">
           <div class="package-holder">
               <div class="pacakge-img-holder" [ngStyle]="{'background-image': 'url('+package.imgSrc+')'}">
                   <!-- <img src="{{package.imgSrc}}" alt="{{package.imgName}}" class="img-fluid"> -->
@@ -49,7 +49,7 @@
                 <div class="package-info">
                   <h4 class="tour-name">{{package.tourName}}</h4>
                   <p class="tour-descp">{{package.tourDescp}}</p>
-                  <button class="btn btn-orange" (click)="viewItinerary(package);">View Itinerary</button>
+                  <button class="btn btn-orange" (click)="viewItinerary(package);"> {{i == 2 ? 'View Tour Programs' : 'View Itinerary'}}</button>
                 </div>
           </div>         
         </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="row" >
           <div class="col-md-4" *ngFor="let gallery of galleryList">
-             <div class="img-holder" *ngFor="let list of gallery">
+             <div class="img-holder" *ngFor="let list of gallery;" (click)="showModal();">
                <img src="{{list}}" alt="">
               <div class="descp">Travel India tours</div>
           </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
   </section>
-<section class="services" id="serviceSection" #service>
+<!-- <section class="services" id="serviceSection" #service>
   <div class="container">
     <h2 class="section-heading">Our Services</h2>
     <div class="services-wrapper">
@@ -98,11 +98,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <section class="testimonal" id="testimonalSection" #testimonal>
   <div class="container">
     <div class="testimonial-wrapper">
-        <h2 class="section-heading">Testimonals</h2>
+        <h2 class="section-heading">Customer Reviews</h2>
         <div id="testimonalSlide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#testimonalSlide"  *ngFor="let list of testimonalList; let i = index;" [ngClass]="{'active' : i == 0 }" data-slide-to="i"></li>
@@ -134,7 +134,7 @@
     <div class="col-md-8 offset-md-2 ">
       <div class="about-info">
         <div class="about-imgholder">
-          <img src="/assets/imgs/intro-pic.jpg" alt="" class="">        
+          <img src="/assets/imgs/client-photo.jpg" alt="" class="">        
         </div>
         <p>Thank you for visiting "India Tours with Vijay". Your driver, Vijay Singh, is an experienced driver with a wide range of knowledge covering many historical cities, monuments and locations.
   
@@ -163,6 +163,11 @@
               <input type="email" class="form-control" name="email" placeholder="Enter your email " formControlName="emailId">
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="location" placeholder="Location.." formControlName="location">
+            </div>
+          </div>
           <textarea class="form-control" name="reviews" id="" placeholder="Enter your reviews ..." cols="30" rows="10"  formControlName="message"></textarea>  
           <div>
             <button class="btn btn-orange">Submit</button>
@@ -171,12 +176,6 @@
         <div class="thankyou-message" *ngIf="viewMessage">
           <p>Thank you for your valueable feedback!</p>
         </div>
-
-        <!-- <form action="https://formspree.io/mdozjgkw" method="POST">
-          <input type="text" name="name">
-          <input type="email" name="_replyto">
-          <input type="submit" value="Send">
-        </form> -->
       </div>
       <div class="col-md-6">
         <div class="contact-info">
@@ -207,3 +206,20 @@
     </div>
   </div>
 </section>
+<div class="view" *ngIf="viewModal">
+  <div id="galleryAllImage" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let list of allGalleryImg; let i = index" [ngClass]="{'active': i==0}">
+        <img class="d-block w-100" src="{{list}}" alt="Travel With Vijay">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#galleryAllImage" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#galleryAllImage" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
